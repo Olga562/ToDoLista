@@ -44,3 +44,7 @@ A simple web-based shopping list application where you can add and remove produc
 - ChatGPT (by OpenAI) was used to get help with JavaScript code explanations.
 
 ## License
+
+MIT License
+
+Copyright (c) 2025 Olga562
