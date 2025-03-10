@@ -6,58 +6,56 @@ const uncompletedCounter = document.getElementById("uncompleted-counter");
 
 
 
-// Lisätään tuote listaan
+//Adding item to the list
 function addItem(){
     var inputValue = listInput.value;
-    // Tarkistetaan syöte
+    //Checking input
     if(inputValue=="" || inputValue.length < 2){
         listAlert.innerText = "Invalid item input!";
-        listInput.style.borderColor = "red";  // Asetetaan punainen reunus
-        listInput.classList.add("error");  // Lisää 'error' luokan
+        listInput.classList.add("error");  // Add 'error' class
         return;
     }
 
-    listAlert.innerText = "";// Poistaa virheilmoituksen
-    listInput.style.borderColor = "";  // Poistaa punaisen reunan
-    listInput.classList.remove("error");
+    listAlert.innerText = "";//Remove error message
+    listInput.classList.remove("error");//Remove "error" class
 
-    var listItem = createNewItem(inputValue);//Luodaan uusi tuote
-    listUl.appendChild(listItem);//Lisätään se listaan 
-    listInput.value = "";//Tyhjenettään syöttökenttä
-    saveListItem();//Talennetaan 
-    updateCounters();//Laskurin päivitys
+    var listItem = createNewItem(inputValue);//Creating new item and adding it to the list
+    listUl.appendChild(listItem);
+    listInput.value = "";//Clear input field
+    saveListItem(); 
+    updateCounters();
     
 }
 
-//Luodaan uusi listan tuote ja delete-nappin
+//Creating new item and delete button
 function createNewItem(inputValue){
     var listItem = document.createElement("li");
     var label = document.createElement("label");
     var deleteBtn = document.createElement("button");
 
-    deleteBtn.innerHTML = "\u00D7";//Nappiin tulee "x" merkki
+    deleteBtn.innerHTML = "\u00D7";//Button with "x"
     label.innerText = inputValue;
     listItem.appendChild(label);
     listItem.appendChild(deleteBtn);
    
-    deleteBtn.addEventListener("click", removeItem);//Lisätään delete-nappiin toiminallisuutta
+    deleteBtn.addEventListener("click", removeItem);//Adding event listener to the button
     listItem.addEventListener("click", function(){
         this.classList.toggle("checked");
-        saveListItem();//Tallenetaan lista ja päivitetään laskuri
+        saveListItem();//Saving list and updating counter
         updateCounters();
     });
     return listItem
 
 }
-//poistetaan tuote listasta
+//Deleting item from the list
 function removeItem(){
-    var listItem = this.parentNode;//Haetaan elementti
+    var listItem = this.parentNode;//get element
     listUl.removeChild(listItem);
     saveListItem();
     updateCounters();
 }
 
-//Tuodaan tuoteet Local Storage:sta
+//Bringing from Local Storage
 function readListItems(){
     var savedItems = localStorage.getItem("listed-items");
     savedItems = JSON.parse(savedItems);
@@ -65,12 +63,12 @@ function readListItems(){
         return
     }
     savedItems.forEach((element) => {
-        var listItem = createNewItem(element);//Luodaan lista
+        var listItem = createNewItem(element);//creating list
         listUl.appendChild(listItem);
     })
 }
 
-//Tallenetaan tuotteet Local Storage:en
+//Saving to Local Storage
 function saveListItem(){
     let list = [];
     document.querySelectorAll("#list-items li").forEach((element) =>{
@@ -82,7 +80,7 @@ function saveListItem(){
 }
 
 
-//Laskurin päivittäminen
+//Updating the list
 function updateCounters() {
     const completedTasks = document.querySelectorAll(".checked").length;
     const uncompletedTasks =

@@ -12,11 +12,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .container {
     background: #fff;
-    padding: 40px 30px 70px;
+    padding: 40px 20px 40px;
     margin: 100px auto 20px;
     width: 550px;
     border-radius: 10px;
@@ -89,7 +90,7 @@ ul li:hover {
   }
 
 ul li.checked {
-    background: 		#f2f2f2;
+    background: #f2f2f2;
     color: #fff;
     text-decoration: line-through;
 }
@@ -136,4 +137,3 @@ ul li button {
     background-color: inherit;
     cursor: pointer;
 }
-
