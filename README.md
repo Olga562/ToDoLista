@@ -2,7 +2,8 @@
 
 ## Developer
 
-Name: Olga Tselms
+Name: Olga Tselms. 
+
 This is a school project for the **Web Application Development with JavaScript** course.
 
 ## Demo-link
