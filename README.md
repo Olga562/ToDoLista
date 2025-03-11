@@ -7,7 +7,7 @@ This is a school project for the **Web Application Development with JavaScript**
 
 ## Demo-link
 
-Access my site at 
+Access my site at [https://flourishing-croissant-4dabdb.netlify.app/](https://flourishing-croissant-4dabdb.netlify.app/)
 
 ## About The App
 
