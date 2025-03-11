@@ -13,7 +13,6 @@ Access my site at [https://flourishing-croissant-4dabdb.netlify.app/](https://fl
 
 A simple web-based shopping list application where you can add and remove products. The list is saved in the browser's LocalStorage, so your items will stay even after refreshing the page.
 
-## Screenshots
 
 ## Technologies Used
 
